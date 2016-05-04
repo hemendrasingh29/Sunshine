@@ -103,9 +103,9 @@ public class MainActivityFragment extends Fragment {
     private void updateWeather() {
         FetchWeatherTask weatherTask = new FetchWeatherTask();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
-        String location = prefs.getString(getString(R.string.pref_location_key),
+        String location = prefs.getString(getString(R.string.location_value_key),
                 getString(R.string.pref_location_default));
-       weatherTask.execute(location);
+        weatherTask.execute(location);
     }
 
     @Override

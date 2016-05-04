@@ -17,9 +17,9 @@
         based on your message history
     </string>
     <!-- Example General location seetings lable -->
-    <string name="pref_location_lable"> Location</string>
+    <string name="pref_location_label"> Location</string>
     <!-- key defined to save in general pref-->
-    <string name="pref_location_key" translatable="false"> Location</string>
+    <string name="location_value_key" translatable="false"> Location</string>
     <!-- defaault value to be displayed -->
     <string name="pref_location_default" translatable="false">94043</string>
 

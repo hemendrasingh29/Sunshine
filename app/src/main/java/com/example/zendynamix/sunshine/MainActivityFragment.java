@@ -52,19 +52,12 @@ public class MainActivityFragment extends Fragment {
         setHasOptionsMenu(true);
 
         View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-        final String[] forcastlist = {"monday",
-                "tuesday",
-                "wednesday",
-                "thursday",
-                "friday",
-                "saturday", "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"};
-        final List<String> mForcasarraylist = new ArrayList<>(Arrays.asList(forcastlist));
         mListAdapter = new ArrayAdapter<>(
                 getActivity(),
                 R.layout.list_item_forcast,
                 R.id.list_item_forcast_textview,
-                mForcasarraylist
-        );
+                new ArrayList<String>());
+
         ListView listView = (ListView) rootView.findViewById(R.id.list_view_forcat);
         listView.setAdapter(mListAdapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -105,6 +98,8 @@ public class MainActivityFragment extends Fragment {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
         String location = prefs.getString(getString(R.string.location_value_key),
                 getString(R.string.pref_location_default));
+
+
         weatherTask.execute(location);
     }
 
@@ -115,7 +110,7 @@ public class MainActivityFragment extends Fragment {
 
     }
 
-    public class FetchWeatherTask extends AsyncTask<String, Void, String[]> {
+    public class FetchWeatherTask extends AsyncTask<String,Void, String[]> {
 
         private final String LOG_TAG = FetchWeatherTask.class.getSimpleName();
 
@@ -132,7 +127,15 @@ public class MainActivityFragment extends Fragment {
         /**
          * Prepare the weather high/lows for presentation.
          */
-        private String formatHighLows(double high, double low) {
+        private String formatHighLows(double high, double low,String unitType) {
+            if (unitType.equals(getString(R.string.pref_units_imperial))) {
+                high = (high * 1.8) + 32;
+                low = (low * 1.8) + 32;
+            } else if (!unitType.equals(getString(R.string.pref_units_metric))) {
+
+                Log.d(LOG_TAG, "Unit type not found: " + unitType);
+            }
+
             // For presentation, assume the user doesn't care about tenths of a degree.
             long roundedHigh = Math.round(high);
             long roundedLow = Math.round(low);
@@ -180,6 +183,10 @@ public class MainActivityFragment extends Fragment {
             dayTime = new Time();
 
             String[] resultStrs = new String[numDays];
+
+            SharedPreferences sharedPreferences= PreferenceManager.getDefaultSharedPreferences(getActivity());
+            String unitTypes=sharedPreferences.getString(getString(R.string.pref_units_key),
+                    getString(R.string.pref_units_metric));
             for (int i = 0; i < weatherArray.length(); i++) {
                 // For now, using the format "Day, description, hi/low"
                 String day;
@@ -207,7 +214,7 @@ public class MainActivityFragment extends Fragment {
                 double high = temperatureObject.getDouble(OWM_MAX);
                 double low = temperatureObject.getDouble(OWM_MIN);
 
-                highAndLow = formatHighLows(high, low);
+                highAndLow = formatHighLows(high, low,unitTypes);
                 resultStrs[i] = day + " - " + description + " - " + highAndLow;
             }
 

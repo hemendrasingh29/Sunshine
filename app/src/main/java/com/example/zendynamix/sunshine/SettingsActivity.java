@@ -189,6 +189,7 @@ public class SettingsActivity extends AppCompatPreferenceActivity {
             addPreferencesFromResource(R.xml.pref_general);
             setHasOptionsMenu(true);
  bindPreferenceSummaryToValue(findPreference(getString(R.string.location_value_key)));
+            bindPreferenceSummaryToValue(findPreference(getString(R.string.pref_units_key)));
 
             // Bind the summaries of EditText/List/Dialog/Ringtone preferences
             // to their values. When their values change, their summaries are

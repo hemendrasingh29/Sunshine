@@ -22,6 +22,10 @@
     <string name="location_value_key" translatable="false"> Location</string>
     <!-- defaault value to be displayed -->
     <string name="pref_location_default" translatable="false">94043</string>
+    <!-- Example preffered location on map -->
+
+
+    <string name="action_map">Map Location</string>
 
     <!-- Label for the temperature units preference [CHAR LIMIT=30] -->
     <string name="pref_units_label">Temperature Units</string>

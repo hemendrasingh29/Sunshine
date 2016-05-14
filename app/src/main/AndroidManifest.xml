@@ -36,9 +36,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.zendynamix.sunshine.MainActivity" />
         </activity>
+        <!-- if we want other to access out provider we set export to true in provider -->
         <provider
-              android:authorities="com.example.zendynamix.sunshine"
-            android:name=".data.WeatherProvider" />
+            android:name=".data.WeatherProvider"
+            android:authorities="com.example.zendynamix.sunshine"
+            android:enabled="true"
+            android:exported="true" />
+
+
     </application>
 
 </manifest>

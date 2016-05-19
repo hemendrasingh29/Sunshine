@@ -4,13 +4,14 @@
     android:layout_height="match_parent"
     android:paddingBottom="16dp"
     android:paddingLeft="16dp"
+
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
     <ListView
-        android:id="@+id/list_view_forcat"
+        android:id="@+id/list_view_forcast"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 

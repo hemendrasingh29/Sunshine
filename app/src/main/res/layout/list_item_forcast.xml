@@ -4,8 +4,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:gravity="center_vertical"
     android:background="@drawable/touch_selector"
+    android:gravity="center_vertical"
     android:minHeight="?android:attr/listPreferredItemHeight"
     android:orientation="horizontal"
 
@@ -17,8 +17,8 @@
         android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:layout_height="wrap_content"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_weight="1"
         android:orientation="vertical"
         android:paddingLeft="16dp">
@@ -27,13 +27,19 @@
             android:id="@+id/list_item_date_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tomorrow"/>
+            android:fontFamily="sans-serif-condended"
+            android:text="Tomorrow"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/list_item_forecast_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear"/>
+            android:fontFamily="sans-serif-condended"
+            android:text="Clear"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:textColor="@color/black" />
 
     </LinearLayout>
 
@@ -46,13 +52,20 @@
             android:id="@+id/list_item_high_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="81"/>
+            android:fontFamily="sans-serif-condended"
+            android:text="81"
+            android:textAppearance="?android:textAppearanceMedium"
+
+            android:textColor="@color/black" />
 
         <TextView
             android:id="@+id/list_item_low_textview"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="68" />
+            android:fontFamily="sans-serif-condended"
+            android:text="68"
+            android:textAppearance="?android:textAppearanceSmall"
+            android:textColor="@color/black" />
     </LinearLayout>
 
 </LinearLayout>

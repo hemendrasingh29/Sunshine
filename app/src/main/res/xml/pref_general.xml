@@ -1,50 +1,21 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<?xml version="1.0" encoding="UTF-8"?>
 
-    <SwitchPreference
-        android:defaultValue="true"
-        android:key="example_switch"
-        android:summary="@string/pref_description_social_recommendations"
-        android:title="@string/pref_title_social_recommendations" />
+    <PreferenceScreen android:layout_height="match_parent"
+    android:layout_width="match_parent" xmlns:android="http://schemas.android.com/apk/res/android">
 
-
-    <!-- NOTE:THIS IS FOR LOCATION SELECTION -->
-
-    <EditTextPreference
-        android:defaultValue="@string/pref_location_default"
+    <EditTextPreference android:title="@string/pref_location_label"
+        android:singleLine="true"
         android:inputType="text"
-        android:key="@string/location_value_key"
-        android:singleLine="true"
-        android:title="@string/pref_location_label" />
-    <ListPreference
-        android:defaultValue="@string/pref_units_metric"
-        android:entries="@array/pref_units_options"
-        android:entryValues="@array/pref_units_values"
-        android:key="@string/pref_units_key"
-        android:title="@string/pref_units_label" />
+        android:defaultValue="@string/pref_location_default"
+        android:key="@string/location_value_key"/>
 
-    <!-- NOTE: EditTextPreference accepts EditText attributes. -->
-    <!-- NOTE: EditTextPreference's summary should be set to its value by the activity code. -->
-    <EditTextPreference
-        android:capitalize="words"
-        android:defaultValue="@string/pref_default_display_name"
-        android:inputType="textCapWords"
-        android:key="example_text"
-        android:maxLines="1"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:title="@string/pref_title_display_name" />
+    <ListPreference android:title="@string/pref_units_label"
+        android:defaultValue="@string/pref_units_metric" android:key="@string/pref_units_key" android:entries="@array/pref_units_options" android:entryValues="@array/pref_units_values"/>
 
-
-    <!-- NOTE: Hide buttons to simplify the UI. Users can touch outside the dialog to
-         dismiss it. -->
-    <!-- NOTE: ListPreference's summary should be set to its value by the activity code. -->
-    <ListPreference
-        android:defaultValue="-1"
-        android:entries="@array/pref_example_list_titles"
-        android:entryValues="@array/pref_example_list_values"
-        android:key="example_list"
-        android:negativeButtonText="@null"
-        android:positiveButtonText="@null"
-        android:title="@string/pref_title_add_friends_to_messages" />
+    <CheckBoxPreference android:title="@string/pref_enable_notifications_label"
+        android:defaultValue="@string/pref_enable_notifications_default"
+        android:key="@string/pref_enable_notifications_key"
+        android:summaryOn="@string/pref_enable_notifications_true"
+        android:summaryOff="@string/pref_enable_notifications_false"/>
 
 </PreferenceScreen>

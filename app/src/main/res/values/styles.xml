@@ -13,7 +13,7 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="displayOptions">useLogo|showHome</item>
-               <item name="logo">@drawable/ic_logo</item>
+        <item name="logo">@drawable/ic_logo</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -22,6 +22,8 @@
     <style name="ForecastListStyle">
 
     </style>
+
+
     <!-- Base application theme. -->
 
 

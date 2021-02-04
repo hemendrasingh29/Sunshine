@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-Sunshine.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidStudioProjects-Sunshine.iml" group="Sunshine" />
       <module fileurl="file://$PROJECT_DIR$/Sunshine.iml" filepath="$PROJECT_DIR$/Sunshine.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Sunshine-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Sunshine-app.iml" group="Sunshine/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

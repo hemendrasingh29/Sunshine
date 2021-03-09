@@ -5,8 +5,9 @@
 
     <EditTextPreference android:title="@string/pref_location_label"
         android:singleLine="true"
-        android:inputType="text"
+        android:inputType="number"
         android:defaultValue="@string/pref_location_default"
+        android:maxLength="5"
         android:key="@string/location_value_key"/>
 
     <ListPreference android:title="@string/pref_units_label"

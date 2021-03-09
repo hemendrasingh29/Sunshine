@@ -76,12 +76,6 @@
                         android:resource="@xml/syncadapter" />
                 </service>
 
-        <!--    <service android:name=".services.SunShineService" />
-
-           <receiver
-               android:name=".services.SunShineService$AlarmReceiver"
-               android:enabled="true" />
-                -->
     </application>
 
 </manifest>

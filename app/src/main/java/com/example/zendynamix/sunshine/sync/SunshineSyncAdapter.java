@@ -23,7 +23,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 
-import android.support.v4.app.NotificationCompat;
+import androidx.core.app.NotificationCompat;
 import android.text.format.Time;
 import android.util.Log;
 import android.content.SharedPreferences;
@@ -31,7 +31,6 @@ import android.preference.PreferenceManager;
 
 
 import com.example.zendynamix.sunshine.MainActivity;
-import com.example.zendynamix.sunshine.MainActivityFragment;
 import com.example.zendynamix.sunshine.R;
 import com.example.zendynamix.sunshine.Utility;
 import com.example.zendynamix.sunshine.data.WeatherContract;
@@ -49,8 +48,7 @@ import java.net.URL;
 import java.util.Vector;
 
 import static android.app.TaskStackBuilder.create;
-import static android.support.v4.app.NotificationCompat.*;
-import static android.support.v7.app.NotificationCompat.*;
+
 
 public class SunshineSyncAdapter extends AbstractThreadedSyncAdapter {
     public final String LOG_TAG = SunshineSyncAdapter.class.getSimpleName();
